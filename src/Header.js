@@ -13,7 +13,7 @@ function Header() {
     if (user) {
       auth.signOut();
     }
-  }
+  };
 
   return (
     <div className="header">
@@ -21,6 +21,7 @@ function Header() {
         <img
           className="header_logo"
           src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+          alt=""
         />
       </Link>
 
@@ -34,8 +35,10 @@ function Header() {
       <div className="header_nav">
         <Link to={!user && "/login"}>
           <div onClick={handleAuthentication} className="header_option">
-            <span className="header_optionLineOne">Hello Guest</span>
-            <span className="header_optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
+            <span className="header_optionLineOne">Hello {!user ? 'Guest' : user.email}</span>
+            <span className="header_optionLineTwo">
+              {user ? "Sign Out" : "Sign In"}
+            </span>
           </div>
         </Link>
 

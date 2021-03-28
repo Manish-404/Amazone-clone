@@ -7,6 +7,7 @@ function Product({ id, title, image, price, rating }) {
 
   const addToBasket = () => {
     //dispatch some action i.e. (the item) into dataLayer
+    
     dispatch({
       type: "ADD_TO_BASKET",
       item: {
@@ -38,7 +39,8 @@ function Product({ id, title, image, price, rating }) {
 
       <img src={image} alt="" />
 
-      <button onClick={addToBasket}>Add to Basket</button>
+      <button onClick={addToBasket}>Add to Basket
+      </button>
     </div>
   );
 }

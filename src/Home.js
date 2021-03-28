@@ -11,22 +11,21 @@ function Home() {
           src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
           alt=""
         />
-
         <div className="home_row">
-          <Product
-            id="12321341"
-            title="Sony a7 III (ILCE7M3K/BQ) Full-frame Mirrorless changeable-Lens Camera with 28-70mm Lens with 3-Inch LCD, Black"
-            price={1100}
-            image="https://m.media-amazon.com/images/I/91rQ3XfEYzL._AC_UY218_.jpg"
-            rating={5}
-          />
-          <Product
-            id="12321342"
-            title="LETSCOM Smart Watch for Android Phones & iPhone, 1.69 Inch Touch Screen, Alexa Built-in Heart Rate Monitor..."
-            price={100}
-            image="https://m.media-amazon.com/images/I/71+y8vAqhLL._AC_UY218_.jpg"
-            rating={5}
-          />
+            <Product
+              id="12321341"
+              title="Sony a7 III (ILCE7M3K/BQ) Full-frame Mirrorless changeable-Lens Camera with 28-70mm Lens with 3-Inch LCD, Black"
+              price={1100}
+              image="https://m.media-amazon.com/images/I/91rQ3XfEYzL._AC_UY218_.jpg"
+              rating={5}
+            />
+            <Product
+              id="12321342"
+              title="LETSCOM Smart Watch for Android Phones & iPhone, 1.69 Inch Touch Screen, Alexa Built-in Heart Rate Monitor..."
+              price={100}
+              image="https://m.media-amazon.com/images/I/71+y8vAqhLL._AC_UY218_.jpg"
+              rating={5}
+            />
         </div>
 
         <div className="home_row">

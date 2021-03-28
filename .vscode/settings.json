@@ -1,0 +1,7 @@
+{
+    "tabnine.disable_file_regex": [
+    
+    ],
+    "tabnine.experimentalAutoImports": false,
+    "auto-close-tag.enableAutoCloseTag": false
+}
