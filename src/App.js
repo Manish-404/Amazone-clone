@@ -5,33 +5,38 @@ import Home from "./Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Checkout from "./Checkout";
 import Login from "./Login";
+import Payment from './Payment';
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
-import Payment from './Payment';
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+const promise = loadStripe("pk_test_51IZw80SEkX7A22Q4tY093cymYKpQeXg5hesrAVOjAKDsvHtX2nMvn3UbaaNYuiKyH4Y6EOX7YVlKRoQNaeiWU28z00BGId739x"
+);
 
 function App() {
   const [{}, dispatch] = useStateValue();
 
   useEffect (() => {
     //will only run once the app component loads...
-      auth.onAuthStateChanged(authUser => {
-        console.log('THE USER IS >>>>', authUser);
+    auth.onAuthStateChanged(authUser => {
+      console.log('THE USER IS >>>>', authUser);
         
-        if (authUser){
-          //the user just logged in or the user was logged in
-          dispatch({
-            type: 'SET_USER',
-            user: authUser
-          })
-        }else{
-          //the user is logged out
-            dispatch({
-              type: 'SET_USER',
-              user: null
-            })
-        }
-      })
-  }, [])
+      if (authUser){
+        //the user just logged in or the user was logged in
+        dispatch({
+          type: 'SET_USER',
+          user: authUser
+        })
+      }else{
+        //the user is logged out
+        dispatch({
+          type: 'SET_USER',
+          user: null
+        });
+      }
+    });
+  }, []);
 
   return (
     //BEM
@@ -47,7 +52,9 @@ function App() {
           </Route>
           <Route path="/payment">
             <Header />
-            <Payment />
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
           </Route>
           <Route path="/">
             <Header />
