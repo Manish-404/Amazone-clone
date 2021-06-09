@@ -2,6 +2,27 @@
     "tabnine.disable_file_regex": [
     
     ],
-    "tabnine.experimentalAutoImports": false,
-    "auto-close-tag.enableAutoCloseTag": false
+    "tabnine.experimentalAutoImports": true,
+    "auto-close-tag.activationOnLanguage": [
+    
+        "xml",
+        "php",
+        "blade",
+        "ejs",
+        "jinja",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "plaintext",
+        "markdown",
+        "vue",
+        "liquid",
+        "erb",
+        "lang-cfml",
+        "cfml",
+        "HTML (EEx)",
+        "HTML (Eex)",
+        "plist"
+    ]
 }
